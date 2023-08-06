@@ -80,4 +80,22 @@ Router.get("/", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+/*
+Route         /
+Descrip       Get Particular Note by ID
+Params        /:_id
+Access        Public
+Method        GET
+*/
+
+Router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const Note = await NotesModel.findOne({ _id: id });
+    return res.json({ Note });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 export default Router;

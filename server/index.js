@@ -1,5 +1,6 @@
 const express = require("express");
-
+import cors from "cors";
+import helmet from "helmet";
 //API
 import Notes from "./APIs/Notes";
 
@@ -10,7 +11,8 @@ dbConnection();
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
+app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 
 //Route
