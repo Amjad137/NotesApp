@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 require("dotenv").config();
+
 function dbConnection() {
   const DB_URL = process.env.MONGO_URI;
   mongoose.connect(DB_URL, {
@@ -16,3 +17,5 @@ db.once("open", function () {
 });
 
 module.exports = dbConnection;
+
+//This is a configuration file used to connect MongoDb

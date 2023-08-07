@@ -1,8 +1,7 @@
 import express from "express";
 import { NotesModel } from "../../database/Notes";
-
 const Router = express.Router();
-
+import { validateInput } from "../../validation/validate";
 /*
 Route         /
 Descrip       Add Notes Contents
@@ -13,6 +12,7 @@ Method        POST
 
 Router.post("/", async (req, res) => {
   try {
+    await validateInput(req.body.credentials);
     const NotesData = req.body.credentials;
     await NotesModel.create(NotesData);
     return res.status(200).json({ status: "success" });

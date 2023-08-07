@@ -11,8 +11,8 @@ dbConnection();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-app.use(helmet());
+app.use(cors()); // to allow Cross Origin Resource Sharing
+app.use(helmet()); // to comply with web security standards
 app.use(express.urlencoded({ extended: false }));
 
 //Route

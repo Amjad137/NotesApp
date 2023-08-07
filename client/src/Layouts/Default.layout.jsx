@@ -12,3 +12,5 @@ const Default =
   };
 
 export default Default;
+
+//This is an HOC component
