@@ -57,7 +57,7 @@ const HomePage = () => {
     openViewDialog();
     // console.log(selectedNoteToView);
   };
-  const image = "";
+
   return (
     <>
       <Popup
@@ -72,13 +72,7 @@ const HomePage = () => {
         pageName="ViewPage"
         noteData={viewNote}
       />
-      <div
-        className="flex flex-wrap justify-center items-center gap-5 mt-10 "
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className="flex flex-wrap justify-center items-center gap-5 mt-10 ">
         {allNotesData.map((each, index) => (
           <div
             key={index}
