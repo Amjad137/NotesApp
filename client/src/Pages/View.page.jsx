@@ -3,7 +3,7 @@ import React from "react";
 const ViewPage = ({ noteData }) => {
   return (
     <>
-      <div className="flex flex-col border-2 rounded-lg overflow-scroll">
+      <div className="flex flex-col border-2 rounded-lg overflow-visible">
         <h1 className=" text-xl font-semibold border-b-2 mb-2 p-2">
           {noteData.Title}
         </h1>

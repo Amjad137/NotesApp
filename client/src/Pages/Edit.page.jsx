@@ -32,7 +32,9 @@ const Edit = ({ editNoteData }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
+      alert("Title/Content Cannot be Empty!");
       console.error(error);
+      setLoading(false);
     }
   };
 

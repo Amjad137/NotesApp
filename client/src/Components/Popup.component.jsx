@@ -1,3 +1,5 @@
+//this is a template made with HeadlessUi, this is used to create a PopUp effect
+
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -11,10 +13,10 @@ const Popup = ({ isOpen, setIsOpen, pageName, editNoteData, noteData }) => {
     AddNew: <AddNew />,
     Edit: <Edit editNoteData={editNoteData} />,
     ViewPage: <ViewPage noteData={noteData} />,
-    // Add more components as needed
+    // These are the Pages which are going to be rendered in the Popup window based on the situation
   };
 
-  // Render the component based on the value of pageName
+  // Render the PageComponent based on the value of pageName
   const dynamicComponent = components[pageName];
 
   function closeModal() {

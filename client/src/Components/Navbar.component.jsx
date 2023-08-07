@@ -21,11 +21,11 @@ function NavLg() {
           <h1>Notes</h1>
         </div>
         <button
-          className="flex flex-row items-center gap-2 border-2 rounded-lg p-1 bg-gray-200"
+          className="flex flex-row items-center gap-2 border-2 border-gray-400 rounded-lg p-1 shadow-lg bg-white"
           onClick={openAddDialog}
         >
           <VscAdd />
-          <h1>Add New</h1>
+          <h1 className="font-light">Add New</h1>
         </button>
       </div>
     </>
@@ -49,11 +49,11 @@ function NavMd() {
           <h1>Notes</h1>
         </div>
         <button
-          className="flex flex-row items-center gap-2 border-2 rounded-lg p-1 bg-gray-200"
+          className="flex flex-row items-center gap-2 border-2 border-gray-400 rounded-lg p-1 shadow-lg bg-white"
           onClick={openAddDialog}
         >
           <VscAdd />
-          <h1>Add New</h1>
+          <h1 className="font-light">Add New</h1>
         </button>
       </div>
     </>
@@ -78,11 +78,10 @@ function NavSm() {
           <h1>Notes</h1>
         </div>
         <button
-          className="flex flex-row items-center gap-2 border-2 rounded-lg p-1 bg-gray-200"
+          className="flex flex-row items-center gap-2 border-2 border-gray-400 rounded-full p-1 shadow-lg bg-white"
           onClick={openAddDialog}
         >
           <VscAdd />
-          <h1>Add New</h1>
         </button>
       </div>
     </>
