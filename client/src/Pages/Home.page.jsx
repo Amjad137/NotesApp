@@ -4,9 +4,12 @@ import axios from "axios";
 import { LuEdit } from "react-icons/lu";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Popup from "../Components/Popup.component";
+import { fetchNotesData } from "../Redux/NotesReducer/Notes.actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomePage = () => {
-  const [allNotesData, setAllNotesData] = useState([]); //to get All Notes
+  const dispatch = useDispatch();
+  const allNotesData = useSelector((state) => state.notes.notesData); //to get All Notes from redux store
   const [editNoteData, setEditNoteData] = useState(); //to get the data of the Note which should be edited
   const [viewNote, setViewNote] = useState(); //to get the data of the note which should be viewed
 
@@ -16,13 +19,8 @@ const HomePage = () => {
 
   try {
     useEffect(() => {
-      const requestNotesData = async () => {
-        const getNotesData = await axios.get("/notes");
-        const receivedNotesData = getNotesData.data.AllNotes;
-        setAllNotesData(receivedNotesData);
-      };
-      requestNotesData();
-    }, [allNotesData]);
+      dispatch(fetchNotesData());
+    }, [allNotesData, dispatch]);
   } catch (error) {
     alert(error);
     console.log(error);
@@ -57,7 +55,7 @@ const HomePage = () => {
     openViewDialog();
     // console.log(selectedNoteToView);
   };
-
+  console.log(allNotesData);
   return (
     <>
       <Popup

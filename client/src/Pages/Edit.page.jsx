@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Edit = ({ editNoteData }) => {
+const Edit = ({ editNoteData, close }) => {
   const [notesData, setNotesData] = useState({
     Title: editNoteData.Title,
     Content: editNoteData.Content,
@@ -30,7 +30,7 @@ const Edit = ({ editNoteData }) => {
       });
       //   alert("Note Updated successfully");
       setLoading(false);
-      window.location.reload();
+      close();
     } catch (error) {
       alert("Title/Content Cannot be Empty!");
       console.error(error);
