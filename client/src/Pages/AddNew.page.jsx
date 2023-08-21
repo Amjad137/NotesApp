@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddNew = () => {
+const AddNew = ({ close }) => {
   const [notesData, setNotesData] = useState({
     Title: "",
     Content: "",
@@ -29,7 +29,7 @@ const AddNew = () => {
 
       alert("Note Added successfully");
       setLoading(false);
-      window.location.reload();
+      close();
     } catch (error) {
       alert("Title/Content Cannot be Empty!");
       console.error(error);
